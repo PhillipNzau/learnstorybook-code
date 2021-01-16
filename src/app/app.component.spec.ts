@@ -1,6 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { render } from '@testing-library/angular';
+
+describe('AppComponent', () => {
+  it('should render the component', async () => {
+    const { getByText } = await render(AppComponent);
+    expect(getByText('Welcome'));
+  });
+});
+
 
 describe('AppComponent', () => {
   beforeEach(async () => {
